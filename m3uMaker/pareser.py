@@ -13,12 +13,12 @@ def sleep_random():
 def check_url_ok(url):
     """检测连接是否可用"""
     useragent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"
-    print("正在检查URL %s" % url)
+    print(f"正在检查URL {url}")
     try:
         result = requests.get(url, headers={"User-Agent": useragent}, timeout=10)
         return result.status_code == 200
     except requests.exceptions.ConnectionError as e:
-        print("URL %s 访问超时" % url)
+        print(f"URL {url} 访问超时")
         return False
 
 
